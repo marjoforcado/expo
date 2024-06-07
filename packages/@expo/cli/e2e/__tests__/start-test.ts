@@ -180,7 +180,7 @@ describe('server', () => {
 
       // Manifest
       expect(manifest.runtimeVersion).toBe('1.0');
-      expect(manifest.extra.expoClient.sdkVersion).toBe('49.0.0');
+      expect(manifest.extra.expoClient.sdkVersion).toBe('50.0.0');
       expect(manifest.extra.expoClient.slug).toBe('basic-start');
       expect(manifest.extra.expoClient.name).toBe('basic-start');
 
@@ -188,6 +188,7 @@ describe('server', () => {
       expect(manifest.extra.expoGo.__flipperHack).toBe('React Native packager is running');
 
       console.log('Fetching bundle');
+      console.log(manifest.launchAsset.url)
       const bundle = await fetch(manifest.launchAsset.url).then((res) => res.text());
       console.log('Fetched bundle: ', bundle.length);
       expect(bundle.length).toBeGreaterThan(1000);

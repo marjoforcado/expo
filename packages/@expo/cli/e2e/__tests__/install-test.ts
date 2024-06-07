@@ -84,7 +84,7 @@ it(
 
     // Added expected package
     const pkgDependencies = pkg.dependencies as Record<string, string>;
-    expect(pkgDependencies['expo-sms']).toBe('~11.4.0');
+    expect(pkgDependencies['expo-sms']).toBe('~11.7.1');
     expect(pkg.devDependencies).toEqual({
       '@babel/core': '^7.20.0',
     });
@@ -154,7 +154,7 @@ it(
     let pkg = await JsonFile.readAsync(path.resolve(projectRoot, 'package.json'));
     // Added expected package
     let pkgDependencies = pkg.dependencies as Record<string, string>;
-    expect(pkgDependencies['expo-sms']).toBe('~11.4.0');
+    expect(pkgDependencies['expo-sms']).toBe('~11.7.1');
 
     // Didn't fix expo-auth-session since we didn't pass it in
     expect(pkgDependencies['expo-auth-session']).toBe('1.0.0');
@@ -167,7 +167,7 @@ it(
 
     // Didn't fix expo-auth-session since we didn't pass it in
     pkgDependencies = pkg.dependencies as Record<string, string>;
-    expect(pkgDependencies['expo-auth-session']).toBe('~5.0.2');
+    expect(pkgDependencies['expo-auth-session']).toBe('~5.4.0');
   },
   // Could take 45s depending on how fast npm installs
   60 * 1000
